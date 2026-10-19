@@ -1,0 +1,29 @@
+{
+  "author": "Codex Assistant <codex-assistant@example.invalid>",
+  "timestamp": "2026-10-13T21:16:42+13:00",
+  "commit": "38e8108564e6a34e04c74c9433ff89c41427b869",
+  "tree": "e50f721e835ab409d724fa20fb5da16d272724df",
+  "commit_count": 1,
+  "commit_timestamp": "2026-10-13T21:16:42+13:00",
+  "branch": "main",
+  "purpose": "Actual current assistant baseline; not student contribution history or reconstructed sprint commits",
+  "bundle_sha256": "48e2a141c5fa39efdea72de8a39df1097ba02b4d2940d8b61b5f690fb8870c64",
+  "tracked_files": [
+    ".gitignore",
+    "README.txt",
+    "acceptance_checks.py",
+    "app.py",
+    "models.py",
+    "repository.py",
+    "service.py",
+    "test_system.py"
+  ],
+  "bundle_verify": "PASS",
+  "bundle_restore_byte_comparison": "PASS for all 8 committed files",
+  "bundle_restore_verified_at": "2026-10-14T09:59:04.985106+13:00",
+  "restored_commit": "38e8108564e6a34e04c74c9433ff89c41427b869",
+  "remote_push": "None",
+  "global_git_configuration_changed": false,
+  "student_authored_commits": 0,
+  "included_scope": "Runnable reference source, tests and README; accompanying simulation and verification records are outside this baseline commit"
+}

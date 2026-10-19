@@ -1,0 +1,85 @@
+{
+  "date": "13 October 2026 (Auckland)",
+  "started_at": "2026-10-13T21:16:03.428966+13:00",
+  "completed_at": "2026-10-13T21:16:03.811899+13:00",
+  "timezone": "Auckland",
+  "python": "3.12.14",
+  "platform": "Darwin arm64",
+  "sqlite": "3.53.1",
+  "checks": [
+    [
+      "AT01",
+      "PASS",
+      "Fresh database shows three available items and empty history."
+    ],
+    [
+      "AT02",
+      "PASS",
+      "Loan 1 created, borrower recorded and laptop marked On loan."
+    ],
+    [
+      "AT03",
+      "PASS",
+      "Duplicate borrow rejected without an additional record."
+    ],
+    [
+      "AT04",
+      "PASS",
+      "Unknown ID, blank, spaces-only, 81-character and control-character aliases rejected."
+    ],
+    [
+      "AT05",
+      "PASS",
+      "Return timestamp stored, laptop available and historical loan retained."
+    ],
+    [
+      "AT06",
+      "PASS",
+      "Repeated and nonexistent returns rejected; record count unchanged."
+    ],
+    [
+      "AT07",
+      "PASS",
+      "Empty, returned and active history states displayed correctly."
+    ],
+    [
+      "AT08",
+      "PASS",
+      "A separate process preserves active loans and the three-item inventory."
+    ],
+    [
+      "AT09",
+      "PASS",
+      "Māia preserved in storage and UTF-8 CLI output after restart; physical display not assessed."
+    ],
+    [
+      "AT10",
+      "PASS",
+      "Non-numeric ID and invalid menu choice rejected; subsequent inventory action works."
+    ]
+  ],
+  "unit_result": "9 tests passed",
+  "unit_exit_code": 0,
+  "acceptance_result": "10 technical acceptance checks passed",
+  "acceptance_exit_code": 0,
+  "source_sha256": {
+    "app.py": "d138ff8b62d667020ccfec7a79982837dece31618012039d57775d90f1f2bdfb",
+    "models.py": "57ca460f8152c9a9620de72adf599ed75728d36139f655f28821f017e11fc9a6",
+    "repository.py": "44f49d753640f6c618600d1a1bae6da70b47d907afb0fc1635aff3e4100506a6",
+    "service.py": "bd3aca43ffb9dae7e7fef4ccdab41a68f2a468798c8d11f023b44afa086e29ba",
+    "test_system.py": "7bd49dfc88865702f7dce36e448f0983547ebcf2c9884d5a3401b7611a744556"
+  },
+  "acceptance_script_sha256": "c5bb90af65edf26169282ab0c22e743cd26fe8c7f4729c1d3a6b659eac245ba3",
+  "original_source_unchanged": true,
+  "database_isolation": "database openedDisposable temporary database; no existing user ",
+  "status": {
+    "client_acceptance": "Not evidenced; technical verification is not client sign-off",
+    "consultation": "Not evidenced; no adviser or cultural endorsement claimed",
+    "student_participation": "Not evidenced by assistant-run checks",
+    "physical_presentation_terminal": "Not assessed"
+  },
+  "commands": [
+    "python3 -m unittest -v",
+    "python3 acceptance_checks.py --output-dir <evidence directory>"
+  ]
+}

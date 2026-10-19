@@ -1,0 +1,41 @@
+ASSISTANT BASELINE - REAL VERSION CONTROL EVIDENCE
+
+Author: Codex Assistant <codex-assistant@example.invalid>
+This is one actual assistant-prepared baseline commit created with its real
+current timestamp on 13 October 2026 (Pacific/Auckland). No student commits,
+past sprint history, client approval or consultation are claimed.
+No remote was configured in the baseline repository and nothing was pushed.
+Only the isolated baseline repository's Git identity was configured.
+
+The bundle contains source, tests, .gitignore and README.txt. The full submission
+also includes scenario documents and external evidence not tracked in this
+baseline. Git is optional to run the Python product.
+
+To inspect or resume the baseline, open a terminal in Campus_Equipment_Loan_System:
+    git clone --branch main version_control/baseline.bundle ../Campus_Equipment_Baseline
+    cd ../Campus_Equipment_Baseline
+    git log --date=iso-strict --format=fuller
+    python3 -m unittest -v
+    python3 acceptance_checks.py
+
+Specify --branch main because the bundle contains the main branch explicitly.
+The target checkout directory must not already exist.
+
+Expected baseline commit:
+38e8108564e6a34e04c74c9433ff89c41427b869
+
+Expected tree:
+e50f721e835ab409d724fa20fb5da16d272724df
+
+Baseline timestamp:
+2026-10-13T21:16:42+13:00
+
+The bundle was verified and restored in an isolated folder. All eight tracked
+files matched the supplied baseline byte-for-byte. The test results retain their
+original actual execution date, 13 October 2026; restoration does not relabel
+those results as a new test run. On Windows, py can replace python3.
+
+Before recording a real student change, each person should configure their own
+local Git identity in their working checkout. Preserve the assistant baseline
+and record only genuinely performed work. This bundle does not establish
+student collaboration history or peer review.

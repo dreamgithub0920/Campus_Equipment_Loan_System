@@ -1,0 +1,5 @@
+The bundle contains this ref:
+38e8108564e6a34e04c74c9433ff89c41427b869 refs/heads/main
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1
+/Users/duke/Documents/ChatGPT/YOOBEE/work/mse800_completion_20261013/technical/version_control/baseline.bundle is okay

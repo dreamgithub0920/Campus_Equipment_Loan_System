@@ -1,0 +1,14 @@
+test_borrow_updates_availability_and_history (test_system.LoanTests.test_borrow_updates_availability_and_history) ... ok
+test_double_borrow_is_rejected (test_system.LoanTests.test_double_borrow_is_rejected) ... ok
+test_initial_inventory (test_system.LoanTests.test_initial_inventory) ... ok
+test_invalid_alias (test_system.LoanTests.test_invalid_alias) ... ok
+test_invalid_equipment_id (test_system.LoanTests.test_invalid_equipment_id) ... ok
+test_missing_or_repeated_return (test_system.LoanTests.test_missing_or_repeated_return) ... ok
+test_persistence_after_restart (test_system.LoanTests.test_persistence_after_restart) ... ok
+test_return_keeps_history_and_allows_new_loan (test_system.LoanTests.test_return_keeps_history_and_allows_new_loan) ... ok
+test_unicode_alias_round_trip (test_system.LoanTests.test_unicode_alias_round_trip) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.006s
+
+OK
