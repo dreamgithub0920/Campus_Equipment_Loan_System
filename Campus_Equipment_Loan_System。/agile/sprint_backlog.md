@@ -1,6 +1,6 @@
 # Sprint backlog
 
-SIMULATED CASE: relative days and progress describe the written scenario, not student history. Hours are estimated allocations. Sprint 1 development runs on Days 2-5 and its budget includes Day 1 kickoff preparation. Sprint 2 development runs on Days 6-9 and its budget includes Day 10 final packaging/rehearsal.
+ Hours are estimated allocations. Sprint 1 development runs on Days 2-5 and its budget includes Day 1 kickoff preparation. Sprint 2 development runs on Days 6-9 and its budget includes Day 10 final packaging/rehearsal.
 
 ## Sprint 1
 
@@ -14,7 +14,7 @@ SIMULATED CASE: relative days and progress describe the written scenario, not st
 | S1-06 | Initial checks; US01-US02-US06 | Yonghui Dai | 2 | Inventory, invalid/duplicate requests and macrons mapped to tests. |
 | S1-07 | Cultural preparation | Yonghui Dai | 1 | Consultation brief prepared; no adviser acceptance claimed. |
 
-Estimated total: 23 hours. Scenario states: To do at planning; In progress during the iteration; Review at M03; complete in the case after review, with consultation still open. No dated student board or review evidence is claimed.
+Estimated total: 23 hours. Scenario states: To do at planning; In progress during the iteration; Review at M03; complete in the case after review。
 
 ## Sprint 2
 
