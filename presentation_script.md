@@ -1,19 +1,30 @@
-# MSE800 presentation script: 15 minutes, 5 minutes per speaker
+# MSE800 presentation script: shorter version for a 15-minute team slot
 
 更新日期：2026 年 10 月 25 日。对应 `04_Presentation_15min.pptx` 的 12 页。
 
-## 使用说明
+## 使用方法
 
-- 演讲顺序：Xuerui Huang（第 1–4 页）、Bin Wang（第 5–8 页）、Yonghui Dai（第 9–12 页）。
-- 每人 5 分钟，合计 15 分钟。Bin 的 2 分 15 秒现场演示包含在其 5 分钟之内。
-- 下表时间包含换页、操作和交接。英文正文用于演讲，中文提示不朗读。
-- 页数与时间已经分配，实际语速仍需彩排校准。建议每人在 4 分 45 秒左右完成主要内容，保留交接余量。
-- 学生个人经历、团队会议和咨询只能按实际情况表述。本文区分原课堂示例与当前实际技术成果。
-- 这份安排不额外预留问答时间；若老师要求问答也计入 15 分钟，需要相应压缩正文。
+- 顺序和分配不变：Xuerui Huang 第 1–4 页，Bin Wang 第 5–8 页，Yonghui Dai 第 9–12 页，每人一个 5 分钟时段。
+- 本版面向非英语母语演讲者：句子更短，每行是一句；行尾可自然停顿，空行可稍作停顿。
+- 中文提示和本说明不朗读。不要把 PPT 的表格、所有数字和备注来源全部读一遍。
+- 5 分钟包含讲述、停顿、指向画面、换页和交接。Bin 的 2 分 15 秒演示也包含在内，可边操作边讲。
+- 下表是时间分配，不是实测语速。建议按约每分钟 80–90 个英文词彩排；Bin 的演示操作需要单独计时。
+- 如果提前结束，不必拖长单词填满 5 分钟；自然交接。是否必须严格满 15 分钟，以及问答是否计入，需要以老师要求为准。
+- 会议示例、助手技术检查、真实个人经历和待开展的咨询保持区分。
 
-## 逐页时间表
+## 缩短前后
 
-| 页 | 主题 | 演讲人 | 本页时长 | 全场时间 |
+| 演讲人 | 原版英文词数 | 本版英文词数 | 备注 |
+| --- | ---: | ---: | --- |
+| Xuerui Huang | 519 | 380 | 慢速讲述并保留停顿 |
+| Bin Wang | 402 | 290 | 含边操作边讲的 GUI 演示 |
+| Yonghui Dai | 503 | 376 | 慢速讲述并保留停顿 |
+
+词数用于控制篇幅，并不保证实际演讲时长。PPT 备注和下文正文完全对应。
+
+## 逐页时间分配
+
+| 页 | 主题 | 演讲人 | 本页时段 | 全场时间 |
 | --- | --- | --- | --- | --- |
 | 1 | Campus Equipment Loan System | Xuerui Huang | 30 秒 | 00:00–00:30 |
 | 2 | Equipment desk workflow | Xuerui Huang | 60 秒 | 00:30–01:30 |
@@ -31,152 +42,248 @@
 ## Slide 1: Campus Equipment Loan System
 
 **Speaker:** Xuerui Huang  
-**Time:** 00:00–00:30 (30 seconds)
+**Time allocation:** 00:00–00:30 (30 seconds)
 
-Good morning. We are Xuerui Huang, Bin Wang and Yonghui Dai. Our project is the Campus Equipment Loan System. It is a desktop application for a campus equipment desk. I will explain the requirements and planning. Bin will explain the design and demonstrate the product. Yonghui will discuss testing, cultural considerations and reflection.
+Good morning. We are Xuerui Huang, Bin Wang and Yonghui Dai.
+Our project is the Campus Equipment Loan System.
+I will introduce the requirements and plan.
+Bin will show the design and demo.
+Yonghui will discuss testing and reflection.
 
-**操作提示（不朗读）：** 封面；介绍姓名和分工。30 秒时换第 2 页。
+**操作提示（不朗读）：** 慢速介绍姓名和主题，30 秒左右换页。不要额外朗读封面的副标题。
 
 ## Slide 2: Equipment desk workflow
 
 **Speaker:** Xuerui Huang  
-**Time:** 00:30–01:30 (60 seconds)
+**Time allocation:** 00:30–01:30 (60 seconds)
 
-The operator needs to answer a simple question: which device can someone borrow now? The system manages five devices: a laptop, camera, projector, tablet and microphone. The operator checks availability, records a loan, and later registers a return.
+The system helps a campus desk manage five devices: a laptop, camera, projector, tablet and microphone.
 
-Each new loan includes a borrower name or alias and a phone contact. When the item comes back, the system keeps the record instead of deleting it. This helps the operator review both current and earlier borrowing.
+The operator checks availability, records a loan, and later registers a return.
+Each new loan needs a name or alias and a phone number.
+Returned loans stay in the history.
 
-The application runs locally with SQLite storage. It does not need a server or internet connection for normal use. Different computers keep separate records. We use fictional names and phone numbers in the demonstration.
+The application runs on one computer and saves records locally.
+It does not need a server.
+Each device has a fixed ID to avoid confusion.
+Different computers keep their own separate loan records.
+The demonstration uses fictional borrower details.
 
-**操作提示（不朗读）：** 指向设备清单和借还流程。此页结束时累计 1 分 30 秒。
+**操作提示（不朗读）：** 慢速讲述；句号处自然停顿。指向设备清单和借还流程。此页结束时累计 1 分 30 秒。
 
 ## Slide 3: Requirements and priorities
 
 **Speaker:** Xuerui Huang  
-**Time:** 01:30–03:00 (90 seconds)
+**Time allocation:** 01:30–03:00 (90 seconds)
 
-We organise the requirements into six user stories. The first is viewing equipment and its availability. The second is borrowing an available item with a name and phone. The third is returning an active loan. The fourth is reviewing history. The fifth is preserving records after a restart. The sixth is preserving Unicode characters in names, including macrons.
+The six user stories cover availability, borrowing, returns, history, saved records and Unicode names.
 
-The core workflow and data preservation are Must requirements. History is a Should requirement, and the current product includes it. Each story has an observable acceptance criterion. For example, a duplicate borrowing request must leave the number of loans unchanged.
+The core workflow and saved records are Must requirements.
+History is a Should requirement, and it is included.
+The operator can still read past loans after a return.
+Saved records must remain when the application restarts.
+Each story has a clear test.
+For example, the system must reject a second loan for the same device.
 
-The phone is required for new loans. Its format allows seven to fifteen digits, with spaces, hyphens, parentheses and one leading plus. This checks the format only. It cannot confirm that a phone exists or belongs to the borrower. Online booking, accounts and payments remain outside the current scope.
+New loans require a phone number with seven to fifteen digits.
+Spaces and common phone symbols are allowed.
+This checks the format only.
+It cannot check who owns the number.
+Online booking, accounts and payments are outside the current scope.
 
-**操作提示（不朗读）：** 不必逐字读表；重点解释 Must/Should 和电话规则。累计 3 分钟。
+**操作提示（不朗读）：** 只解释讲稿中的重点，不逐行读表格，也不补充电话号码的全部格式规则。累计约 3:00。
 
 ## Slide 4: Team, sprints and estimate
 
 **Speaker:** Xuerui Huang  
-**Time:** 03:00–05:00 (120 seconds)
+**Time allocation:** 03:00–05:00 (120 seconds)
 
-The proposed division of work follows the main parts of the system. My role covers requirements, coordination and the interface. Bin's role covers domain objects, business rules and integration. Yonghui's role covers persistence, testing and evidence. Everyone should also review another component so that understanding does not depend on one person.
+The proposed roles are shown here.
+I cover requirements, planning and the interface.
+Bin covers objects, rules and integration.
+Yonghui covers storage, testing and evidence.
+Each member should also review another part.
 
-The report describes a baseline classroom case with two sprints. Sprint one focuses on inventory, borrowing and the storage foundation. Sprint two focuses on returns, history, integration and acceptance. Their estimates are twenty-three and thirty-one hours, giving fifty-four hours in total. These are written planning examples, rather than records of completed student meetings.
+The report uses a two-sprint planning example.
+Sprint one covers inventory, borrowing and storage.
+Sprint two covers returns, history and testing.
+The estimates are twenty-three and thirty-one hours: fifty-four hours in total.
+These are examples, not records of completed student meetings.
 
-The later requests add the desktop interface, Windows startup support, two devices and a required phone contact. We keep those changes separate from the earlier case. The revised planning model adds twelve hours, suggested as four hours per member for adaptation and review. The current estimate is therefore sixty-six hours.
+Later changes add the GUI, Windows support, two devices and phone contacts.
+The plan adds twelve hours for review and adaptation.
+This gives sixty-six hours overall.
+The current estimate also allows each member to review another component.
 
-At thirty New Zealand dollars per hour, labour is one thousand nine hundred and eighty dollars. Adding thirty dollars for resources and a ten-percent contingency gives two thousand two hundred and eleven dollars. This is an estimate, not a record of payments or actual student hours. Bin will now explain the design and demonstrate the application.
+At thirty dollars per hour, labour is one thousand nine hundred and eighty dollars.
+With resources and contingency, the total estimate is two thousand two hundred and eleven New Zealand dollars.
 
-**操作提示（不朗读）：** 保留估算和示例状态，不把计划说成已完成经历。可在 4:45 左右结束并交接；5:00 由 Bin 接手。
+Bin will now explain the design.
+
+**操作提示（不朗读）：** 成本只读讲稿中的 labour 和 total，不逐项念表。估算保持为估算，会议示例保持为示例。累计约 5:00 交接给 Bin。
 
 ## Slide 5: Object-oriented structure
 
 **Speaker:** Bin Wang  
-**Time:** 05:00–06:30 (90 seconds)
+**Time allocation:** 05:00–06:30 (90 seconds)
 
-Thank you. The design separates presentation, business rules and storage. LoanApp in gui.py displays the desktop interface. The original app.py provides a terminal interface. Both use the same LoanService, so changing the interface does not create a second set of borrowing rules.
+Thank you. The design has separate parts for the interface, rules and storage.
 
-LoanService receives an EquipmentRepository object through its constructor. This is composition. The service checks requests, while the repository handles SQLite queries and saved records. Equipment and Loan are data classes that carry information between these components.
+The GUI and terminal interface share one LoanService.
+This keeps the borrowing rules consistent.
+The interface displays the result and updates the tables after a successful action.
+The service receives a repository object.
+This is composition.
+The repository saves and loads records in SQLite.
+Equipment and Loan objects carry the data.
 
-For borrowing, the service checks the name and phone, finds the equipment and rejects an item that is already on loan. A database index also prevents two active loans for the same device. The service provides a readable message, and the database protects the stored rule. Tablet and Microphone use the existing Equipment model because they follow the same borrowing behaviour as the other devices.
+The service checks names, phone numbers and availability.
+The database also prevents two active loans for one device.
+Tablet and Microphone use the same Equipment model because their borrowing behaviour is the same.
+The interface uses equipment IDs for borrowing and loan IDs for returns.
 
-**操作提示（不朗读）：** 讲清两个界面共用服务、组合关系、服务校验和数据库约束。累计 6:30。
+**操作提示（不朗读）：** 慢速讲述；句号处自然停顿。讲清两个界面共用服务、组合关系、服务校验和数据库约束。累计 6:30。
 
 ## Slide 6: Phone storage and older records
 
 **Speaker:** Bin Wang  
-**Time:** 06:30–07:15 (45 seconds)
+**Time allocation:** 06:30–07:15 (45 seconds)
 
-The phone change reaches every layer: input, validation, the Loan object, database storage and displayed history. New loans require a phone contact.
+New loans require a phone number.
+Older records may not have one.
 
-Older databases need a different treatment. The repository adds the borrower_phone column automatically. Existing identifiers, names and timestamps remain unchanged. A historical record without a phone shows Not recorded. The program keeps that gap visible instead of creating information that the borrower never supplied. I will now show the workflow in the GUI.
+The program adds the new database column automatically.
+It keeps the earlier IDs, names and times.
+A missing old phone appears as Not recorded.
+It does not invent contacts.
 
-**操作提示（不朗读）：** 解释旧记录升级，不清空数据库，不编造历史电话。累计 7:15，切到演示。
+I will now show the GUI.
+
+**操作提示（不朗读）：** 慢速讲述；句号处自然停顿。解释旧记录升级，不清空数据库，不编造历史电话。累计 7:15，切到演示。
 
 ## Slide 7: Live GUI demonstration
 
 **Speaker:** Bin Wang  
-**Time:** 07:15–09:30 (135 seconds)
+**Time allocation:** 07:15–09:30 (135 seconds)
 
-This is a separate demonstration database. The inventory contains five devices. I am scrolling to Tablet and Microphone, then selecting Tablet.
+This is a separate demo database.
+I select Tablet and enter Demo A.
 
-I enter Demo A and first leave the phone empty. The program rejects the request. Now I enter the fictional contact zero two zero, followed by seven zeros, and record the loan.
+First, I leave the phone empty.
+The system rejects the request.
+Now I enter a fictional phone and record the loan.
 
-The history shows a Loan ID, the name and the phone. The tablet now shows On loan, and its borrowing button is disabled.
+The tablet shows On loan.
+The borrow button is disabled while this tablet is on loan.
+The history shows the borrower and phone.
 
-I select that active loan and return it. The tablet becomes available again. The returned record and phone stay in history.
+I select this loan and return it.
+The tablet is available again.
+The returned record stays in history.
 
-I will close the window and reopen the same database. The saved record remains. Returns use the loan record, because a loan ID can differ from the equipment ID.
+I close the window and reopen the same database.
+The saved record is still here.
+Returns use the Loan ID shown in the history.
 
-**操作提示（不朗读）：** 本页 2 分 15 秒包含鼠标操作和重启时间。0–15 秒：选 Tablet；15–35 秒：空电话被拒并填写 0200000000；35–55 秒：借用并展示记录；55–80 秒：归还；80–115 秒：关闭并用同一命令重开；115–135 秒：确认历史。保持演示数据库一致。累计 9:30，返回 PPT。
+**操作提示（不朗读）：** 本页 2:15 已包含边讲边操作。0–15 秒：选 Tablet，输入 Demo A；15–40 秒：空电话被拒，再填 0200000000 并借出；40–60 秒：展示 On loan 和历史；60–85 秒：选历史行归还；85–115 秒：关闭并重开同一数据库；115–135 秒：展示历史仍在，返回 PPT。实际操作时不必持续说话。
 
 ## Slide 8: Design choices and limits
 
 **Speaker:** Bin Wang  
-**Time:** 09:30–10:00 (30 seconds)
+**Time allocation:** 09:30–10:00 (30 seconds)
 
-These choices keep the project small enough to explain and test. Both interfaces share the same rules, and returns preserve history. The current product supports one workstation. It has no shared server, login or database encryption. Real campus use would need further controls and review. Yonghui will now explain our technical evidence and the remaining work.
+Both interfaces share the same rules.
+The system keeps returned loans in history.
 
-**操作提示（不朗读）：** 30 秒总结并交接。10:00 由 Yonghui 接手。
+This is a local prototype.
+It has no shared server, login or encryption.
+
+Yonghui will now discuss testing and the remaining work.
+
+**操作提示（不朗读）：** 慢速讲述；句号处自然停顿。30 秒总结并交接。10:00 由 Yonghui 接手。
 
 ## Slide 9: Technical verification
 
 **Speaker:** Yonghui Dai  
-**Time:** 10:00–11:30 (90 seconds)
+**Time allocation:** 10:00–11:30 (90 seconds)
 
-Thank you. The current technical verification includes twelve business and storage checks, eight GUI checks, and twelve acceptance checks. All passed in the recorded assistant execution on macOS on the twenty-fourth of October. The GUI checks create real Tk widgets rather than checking only the business service.
+Thank you. The recorded macOS checks passed twenty unit and GUI tests, plus twelve acceptance checks.
+That includes twelve business and storage tests and eight GUI tests.
 
-The checks cover availability, borrowing, invalid input, duplicate protection, return, filtering, restart and Unicode names. They also exercise the required phone and the two additional devices. Migration checks compare older records before and after upgrading, including their identifiers and timestamps.
+They cover borrowing, invalid input, duplicate loans, returns and saved history.
+They also check phone contacts, both new devices and Unicode names.
+Migration tests check that older records stay unchanged.
+The GUI tests use real windows and controls with temporary databases.
 
-These observations support the tested software version. They do not establish that the three students personally ran the checks, or that a client accepted the product. Windows startup support is included, but a real Windows run is still needed. If the environment skips GUI checks because Tkinter or a desktop display is missing, that does not verify the interface on that computer.
+These results came from assistant-run checks.
+They do not show that students or a client accepted the product.
 
-**操作提示（不朗读）：** 区分 20 项 unittest（12 业务＋8 GUI）与另 12 项验收；不要说已在 Windows 实测。累计 11:30。
+The Windows launcher is included, but it still needs a real Windows test.
+The team should also test the extracted ZIP on the presentation computer.
+
+**操作提示（不朗读）：** 20 项 unit/GUI 与另外 12 项 acceptance 分开说。Windows 仍为待实测。讲稿保留报告中 24 October 的已记录结果；本次 25 October 的重新解压复查也通过，但不冒充学生验收。
 
 ## Slide 10: Cultural considerations and Te Tiriti
 
 **Speaker:** Yonghui Dai  
-**Time:** 11:30–13:00 (90 seconds)
+**Time allocation:** 11:30–13:00 (90 seconds)
 
-The report considers partnership, participation and protection. Partnership means seeking appropriate guidance before treating cultural decisions as settled. Participation means allowing relevant people to influence the requirements and review the interface. Protection includes examining what information the project collects and how it keeps that information.
+The report considers partnership, participation and protection.
 
-The new phone requirement makes that discussion more specific. The prototype stores contacts locally without login or encryption. Before real use, the team needs agreement on why a contact is necessary, who can access it, and how long it should remain. Our demonstration uses fictional details.
+Partnership means seeking appropriate guidance.
+Participation means giving relevant people a chance to influence the requirements.
+Protection includes reviewing the information collected and stored.
 
-The software preserves Unicode names, including macrons. That is a useful technical property, but it cannot establish cultural suitability. No actual Kaiārahi consultation or community approval is claimed. The prepared briefing asks about participation, language, contact collection and acceptance criteria. Those review questions remain open until the appropriate people contribute.
+Phone numbers make this important.
+Before real use, the team needs to agree why contacts are needed, who can see them, and when to delete them.
+The current demo uses fictional details.
 
-**操作提示（不朗读）：** 用具体电话字段说明 protection；说明咨询仍待开展。累计 13:00。
+The software preserves Unicode names and macrons.
+This supports accurate text, but does not prove cultural suitability.
+For example, a user should be able to ask why their phone is required.
+Kaiārahi consultation is still open.
+The prepared questions need appropriate advice and follow-up.
+The team should record how advice changes the product.
+
+**操作提示（不朗读）：** 慢速讲述；句号处自然停顿。用具体电话字段说明 protection；说明咨询仍待开展。累计 13:00。
 
 ## Slide 11: Reflection and next review
 
 **Speaker:** Yonghui Dai  
-**Time:** 13:00–14:30 (90 seconds)
+**Time allocation:** 13:00–14:30 (90 seconds)
 
-The case and current implementation give us several points to examine. A small change, such as requiring a phone, affects the screen, service, data model, database and tests. A requirement therefore needs to connect to each affected component and to an observable result.
+The current design gives us three points for reflection.
 
-Migration provides another example. A new column should not damage earlier loans or make missing contacts appear complete. Tests need to compare stored values and reopen the database, rather than rely only on a success message.
+First, a small change can affect the whole system.
+Adding a phone field affects the screen, rules, data model, database and tests.
 
-For teamwork, assigned roles and equal estimated hours are only a starting point. Each member should explain another component, review a complete borrowing path and record any unresolved question. Personal reflections should use actual contributions and learning rather than repeat the written scenario as an experience.
+Second, an upgrade should protect old records.
+Tests should compare saved values and reopen the database.
+A success message alone is not enough.
 
-The next technical step is checking the extracted release on the presentation computer. The next participation steps are confirming the tutor's client arrangement and the appropriate advisory route, then recording how that input affects the project.
+Third, team roles need shared understanding.
+Each member should explain another component and review a complete borrowing path.
+Personal reflections must use actual contributions and learning.
+A dated review should name the people involved and link decisions to the source version.
 
-**操作提示（不朗读）：** 反思使用分析语气，不声称未做过的团队活动。累计 14:30。
+The next steps are a presentation-machine check, client review and appropriate cultural guidance.
+The reports should then record what actually happened.
+
+**操作提示（不朗读）：** 慢速讲述；句号处自然停顿。反思使用分析语气，不声称未做过的团队活动。累计 14:30。
 
 ## Slide 12: Current release and next steps
 
 **Speaker:** Yonghui Dai  
-**Time:** 14:30–15:00 (30 seconds)
+**Time allocation:** 14:30–15:00 (30 seconds)
 
-To finish, the current release demonstrates five devices, required phone contacts, borrowing, returns and saved history through a desktop interface. The code and documents are available in the project repository. The remaining work includes Windows verification, participant review and the appropriate consultation. Thank you for listening. We are ready for your questions.
+The current release supports five devices, phone contacts, borrowing, returns and saved history.
 
-**操作提示（不朗读）：** 15:00 结束。若老师把问答计入 15 分钟，请相应缩短正文；当前安排不额外包含问答。
+The remaining work includes Windows testing, participant review and consultation.
+The project is available on GitHub.
+
+Thank you for listening.
+
+**操作提示（不朗读）：** 结束和感谢。15 分钟是全场分配，不要求靠拖长单词填满。问答是否计入总时长仍以老师要求为准。
 
 ## 演示前准备
 
@@ -195,3 +302,11 @@ To finish, the current release demonstrates five devices, required phone contact
 程序源版本：`d61c66ca11d2fd69c2bd40c005d3e4b53f65b100`。
 当前文档中的技术结果来自 2026 年 10 月 24 日 Mac 上的助手执行：20 项 unittest（12 业务/存储＋8 GUI）及 12 项验收检查通过。
 Windows 启动器尚未实机验证。文化咨询和个人反思须按后续实际参与补充。
+
+## 彩排重点
+
+1. 三个人连续彩排一次，并使用真正的电脑和 GUI。第一遍先求清楚，不求速度。
+2. Xuerui 在第 3 页不逐项朗读全部规则；第 4 页不额外解释成本明细。
+3. Bin 预先打开 GUI 和重启窗口，借还与重启时可以停顿，让观众看操作。
+4. Yonghui 把测试数字分成两句说；文化部分使用本稿的短句，不临时加长解释。
+5. 在约 5:00 和 10:00 交接。实际时间超出时，先减少临场发挥和重复说明，再决定是否进一步缩稿。
