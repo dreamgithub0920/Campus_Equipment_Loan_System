@@ -9,7 +9,7 @@ from service import LoanService
 def run(repository):
     service = LoanService(repository)
     print('Campus Equipment Loan System - classroom prototype')
-    print('Use fictional borrower aliases only. Records are stored locally.')
+    print('Use fictional borrower details for demonstrations. Records are stored locally.')
     while True:
         print('\n1. View equipment\n2. Borrow equipment\n3. Return equipment'
               '\n4. View loan history\n0. Exit')
@@ -24,7 +24,8 @@ def run(repository):
             elif choice == '2':
                 equipment_id = int(input('Equipment ID: '))
                 borrower = input('Fictional borrower alias: ')
-                loan_id = service.borrow(equipment_id, borrower)
+                phone = input('Borrower phone number: ')
+                loan_id = service.borrow(equipment_id, borrower, phone)
                 print(f'Borrowed successfully. Loan ID: {loan_id}')
             elif choice == '3':
                 loan_id = int(input('Loan ID: '))
@@ -37,6 +38,7 @@ def run(repository):
                 for loan in history:
                     state = f'Returned {loan.returned_at}' if loan.returned_at else 'Active'
                     print(f'{loan.id} | {loan.equipment_name} | {loan.borrower}'
+                          f' | Phone: {loan.borrower_phone or "Not recorded"}'
                           f' | Borrowed {loan.borrowed_at} | {state} (UTC)')
             else:
                 print('Choose 0, 1, 2, 3, or 4.')

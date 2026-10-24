@@ -16,6 +16,7 @@ class EquipmentRepository:
                 id INTEGER PRIMARY KEY,
                 equipment_id INTEGER NOT NULL REFERENCES equipment(id),
                 borrower TEXT NOT NULL,
+                borrower_phone TEXT NOT NULL DEFAULT '',
                 borrowed_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
                 returned_at TEXT
             );
@@ -23,9 +24,14 @@ class EquipmentRepository:
                 ON loans(equipment_id) WHERE returned_at IS NULL;
         ''')
         with self.connection:
+            columns = {row[1] for row in self.connection.execute('PRAGMA table_info(loans)')}
+            if 'borrower_phone' not in columns:
+                self.connection.execute(
+                    "ALTER TABLE loans ADD COLUMN borrower_phone TEXT NOT NULL DEFAULT ''")
             self.connection.executemany(
                 'INSERT OR IGNORE INTO equipment(id, name) VALUES (?, ?)',
-                [(1, 'Laptop'), (2, 'Camera'), (3, 'Projector')])
+                [(1, 'Laptop'), (2, 'Camera'), (3, 'Projector'),
+                 (4, 'Tablet'), (5, 'Microphone')])
 
     def equipment(self):
         rows = self.connection.execute('''
@@ -36,11 +42,11 @@ class EquipmentRepository:
         ''')
         return [Equipment(row[0], row[1], bool(row[2])) for row in rows]
 
-    def create_loan(self, equipment_id, borrower):
+    def create_loan(self, equipment_id, borrower, borrower_phone):
         with self.connection:
             cursor = self.connection.execute(
-                'INSERT INTO loans(equipment_id, borrower) VALUES (?, ?)',
-                (equipment_id, borrower))
+                'INSERT INTO loans(equipment_id, borrower, borrower_phone) VALUES (?, ?, ?)',
+                (equipment_id, borrower, borrower_phone))
             return cursor.lastrowid
 
     def close_loan(self, loan_id):
@@ -53,7 +59,7 @@ class EquipmentRepository:
 
     def loans(self):
         rows = self.connection.execute('''
-            SELECT l.id, e.name, l.borrower, l.borrowed_at, l.returned_at
+            SELECT l.id, e.name, l.borrower, l.borrowed_at, l.returned_at, l.borrower_phone
             FROM loans l JOIN equipment e ON e.id = l.equipment_id
             ORDER BY l.id
         ''')

@@ -16,3 +16,4 @@ class Loan:
     borrower: str
     borrowed_at: str
     returned_at: str | None
+    borrower_phone: str = ""

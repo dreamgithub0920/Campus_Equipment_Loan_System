@@ -30,4 +30,28 @@ Estimated total: 23 hours. Scenario states: To do at planning; In progress durin
 
 Estimated total: 31 hours. Scenario states: To do at planning; In progress during the iteration; Review at M04; complete in the case after review, with consultation still open. No dated student board or review evidence is claimed.
 
-Total 54 hours; Xuerui Huang 18, Bin Wang 18, Yonghui Dai 18. Review CF01-CF03 retains duplicate protection, the Loan ID distinction and history. CF04 booking is deferred. The retrospective action is a clean-machine rehearsal and cross-explanation of components.
+Baseline total 54 hours; Xuerui Huang 18, Bin Wang 18, Yonghui Dai 18. Review CF01-CF03 retains duplicate protection, the Loan ID distinction and history. CF04 booking is deferred. The retrospective action is a clean-machine rehearsal and cross-explanation of components.
+
+
+## Post-baseline local changes - 24 October 2026
+
+The original two-sprint example and its 54-hour estimate above are unchanged.
+Later local implementation adds the desktop GUI, Mac/Windows launchers, Tablet
+and Microphone, required borrower phone contacts, legacy database migration and
+corresponding checks. These are later technical changes, not evidence that the
+named students performed an additional sprint. Record actual team allocation,
+review and revised estimates separately when the team carries out that work.
+
+## Current-scope effort estimate (planning only)
+
+The original two-sprint baseline remains 54 estimated hours. Allocate a further
+12 estimated hours to adapting/reviewing the GUI, platform launchers, five-device
+inventory, phone requirement, migration and updated technical evidence. A
+possible allocation is 4 hours per member, producing 22 estimated hours per
+member and 66 hours overall. These are planning allowances, not timesheets or
+claims that the students completed the assistant's implementation work.
+
+At NZD 30/hour: labour 1,980; tools 0 additional purchase; resources 30; subtotal
+2,010; 10% contingency 201; revised current-scope estimate NZD 2,211. Actual
+team ownership, review, consultation arrangements and expenditure remain to be
+confirmed from participation. No completed Sprint 3 is asserted.
